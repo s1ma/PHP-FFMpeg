@@ -18,12 +18,18 @@ use FFMpeg\Coordinate\Dimension;
 use FFMpeg\Coordinate\FrameRate;
 use FFMpeg\Filters\Audio\AudioResamplableFilter;
 use FFMpeg\Filters\Audio\AudioFilters;
+use FFMpeg\Filters\Video\VideoMuteFilter;
 
 class VideoFilters extends AudioFilters
 {
     public function __construct(Video $media)
     {
         parent::__construct($media);
+    }
+
+    public function mute() {
+      $this->media->addFilter(new VideoMuteFilter());
+      return $this;
     }
 
     /**
