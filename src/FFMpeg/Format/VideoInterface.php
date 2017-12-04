@@ -46,14 +46,6 @@ interface VideoInterface extends AudioInterface
      *
      * @return Boolean
      */
-     public function setPasses();
-
-     /**
-      * Returns the list of available video codecs for this format.
-      *
-      * @return object
-      */
-
     public function supportBFrames();
 
     /**
