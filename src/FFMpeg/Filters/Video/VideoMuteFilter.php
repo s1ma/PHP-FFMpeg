@@ -14,6 +14,22 @@ use FFMpeg\Media\Video;
 use FFMpeg\Format\VideoInterface;
 class VideoMuteFilter implements VideoFilterInterface
 {
+    /** @var integer */
+    private $priority;
+
+    public function __construct($priority = 0)
+    {
+        $this->priority = $priority;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+    
     /**
      * {@inheritdoc}
      */
