@@ -29,6 +29,12 @@ class X264 extends DefaultVideo
             ->setVideoCodec($videoCodec);
     }
 
+    public function setPasses($passes)
+    {
+      $this->passes = $passes;
+      return $this;
+    } 
+
     /**
      * {@inheritDoc}
      */
